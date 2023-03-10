@@ -1,12 +1,15 @@
 
-    body {
-        background-image: url(images/fondo.jpg);
+
+ body {
+        background-color: red;
+        background-image: url(https://static.vecteezy.com/system/resources/previews/006/713/082/non_2x/abstract-health-medical-science-healthcare-icon-digital-technology-science-concept-modern-innovation-treatment-medicine-on-hi-tech-future-blue-background-for-wallpaper-template-web-design-vector.jpg);
+       /* background-image: url(images\fondo.jpg);*/
     }
 
 .menu{
     color:green;
     width: 100%;
-    position: fixed;
+  /*position: fixed;*/
 }
 .menu li{   
     display:inline-block;
@@ -34,3 +37,46 @@
     a:active{
         font-weight: bold;
     }
+/*FORMULARIO
+*
+*
+*
+*/
+
+
+
+/*IMAGENES
+*
+*
+*
+*
+*
+*
+*/
+.crecer {
+    position: relative;
+   /* display: inline-block;*/
+  }
+  
+  .pequenho {
+    display: none;
+    position: absolute;
+    background-color: #00ff88;
+    min-width: 160px;
+
+  }
+  
+  .crecer:hover .pequenho {
+    display: block;
+  }
+  table {   
+    margin: 0 auto; /* Para centrar usamos "auto" en la alineación horizontal */
+}
+h1,h2,h3{
+    text-align: center;
+    color: #00ff88;
+}
+h1{
+    font-size: 30px;
+    text-decoration-line: underline;
+}
