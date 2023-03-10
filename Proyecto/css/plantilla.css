@@ -1,0 +1,36 @@
+
+    body {
+        background-image: url(images/fondo.jpg);
+    }
+
+.menu{
+    color:green;
+    width: 100%;
+    position: fixed;
+}
+.menu li{   
+    display:inline-block;
+    
+    padding:5px 10px;
+    background-color:#000;
+    border:1px solid #a7a7a7;
+    text-align:center;
+    
+    
+    width: 23%;
+    }
+    .menu li:hover{
+        background-color:#fff;
+        color:#000;
+        font-weight: bold;
+        }
+    .menu li:active{
+         background-color:#00ff88;
+         color:#000;
+          }
+    a,a:visited{
+         color:green;
+    }
+    a:active{
+        font-weight: bold;
+    }
