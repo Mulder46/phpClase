@@ -140,6 +140,16 @@ echo "<br><b>Más Funciones</b> <br>";
 /* Una función que devuelva el número de cifras de un entero pasado como parámetro.
 */
 echo "<br>";
+function ej1($numero){
+    $cifras = 0; $numero2= 1;
+    do {
+        $numero2 = $numero2 * 10;
+        $cifras++;
+    }while($numero>$numero2);
+    return $cifras;
+}
+echo ej1(456);
+salto();
 /*
 Una función que muestre al usuario una secuencia de * (se debe construir la cadena de uno en uno),
  la cantidad de * se pasará cómo parámetro de la función.
@@ -157,7 +167,7 @@ Una función que permita mostrar la secuencia (se debe construir la cadena de un
 *+_*+_*+_*+_
 */
 echo "<br>";
-
+/*
 function secuencia(){
     for ($i=0;$i<4;$i++){
         echo"*";
@@ -165,7 +175,19 @@ function secuencia(){
         echo"-";
     }
 }
-secuencia();
+secuencia();*    /
+echo "ej3: <br>";
+    function ej3($numero)
+    {
+        $resultado = "";
+        for ($i=0; $i < $numero; $i++) {
+            if ($i % 3 == 0) $resultado = $resultado . "*";
+            if ($i % 3 == 1) $resultado = $resultado . "+";
+            if ($i % 3 == 2) $resultado = $resultado . "_";
+        }
+        return $resultado;
+    }
+    echo ej3(5);
 /*
 Una función que permita mostrar un triángulo como el siguiente:
     **
