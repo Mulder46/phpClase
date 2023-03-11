@@ -1,37 +1,40 @@
 
 
  body {
-        background-color: red;
+       /* background-color: red;*/
         background-image: url(https://static.vecteezy.com/system/resources/previews/006/713/082/non_2x/abstract-health-medical-science-healthcare-icon-digital-technology-science-concept-modern-innovation-treatment-medicine-on-hi-tech-future-blue-background-for-wallpaper-template-web-design-vector.jpg);
        /* background-image: url(images\fondo.jpg);*/
     }
-
+/*
+*
+*
+MENU PRINCIPAL
+*
+*
+*/
 .menu{
     color:green;
-    width: 100%;
-  position: fixed;
+    width: 100%; /* que ocupe toda la cabecera */
+  position: fixed; /*no se mueva aunque baje la pantalla */
 }
 .menu li{   
-    display:inline-block;
-    
+    display:inline-block; /*se pongan al lado sin pisarse */ 
     padding:5px 10px;
     background-color:#000;
     border:1px solid #a7a7a7;
     text-align:center;
-    
-    
-    width: 23%;
+    width: 23%; /* que cada item tenga un tamaño igual*/
     }
-    .menu li:hover{
+    .menu li:hover{  /* Cuando el ratón está encima*/ 
         background-color:#fff;
         color:#000;
         font-weight: bold;
         }
-    .menu li:active{
+    .menu li:active{ /*Cuando se está pulsando */
          background-color:#00ff88;
          color:#000;
           }
-    a,a:visited{
+    a,a:visited{ /* no quiero que se diferencia cuando un enlace se a visitado*/
          color:green;
     }
     a:active{
@@ -81,4 +84,58 @@ h1{
     font-size: 30px;
     text-decoration-line: underline;
 }
+/* 
+*
+* Menu lateral
+*
+*
+*/
+aside{   
+  float: right; /* Alineo a la derecha*/
+  color: rgb(22, 105, 58);
+  background-color: #000;
+  width: 20%;
+}
 
+/*
+*
+*
+*
+*
+*
+*
+*
+**
+*
+*/
+form {
+  border: 3px solid #00ff88;
+}
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* aceptar */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  width: 100%; /* que el uuniciar sesión ocupe todo el formulario*/
+}
+
+/* dar un poco de padding */
+.container {
+  padding: 16px;
+}
+
+/*olvido la contraseña alineado a la derecha */
+span.psw {
+  float: right;
+}

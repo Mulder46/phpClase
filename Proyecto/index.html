@@ -16,14 +16,41 @@
     En este paso habrás de hacer una revisión de los ficheros html creados y agregar todas las etiquetas semánticas posibles.  
     CSS3
     Intenta agregar la mayor cantidad de estilos posibles. -->
+    <section>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="biografia.html">Biografía</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            
+        <!-- <iframe width="100%" src="./menu.html"></iframe>Para tener la cabecera igual en todos -->
+        </nav>
+</section>
+<section>
     <header>
-        <ul class="menu">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="biografia.html">Biografía</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-       <!-- <iframe width="100%" src="./menu.html"></iframe>Para tener la cabecera igual en todos -->
+        <h1> .</h1> <!-- Apaño xD-->
+        <h1>Principal </h1>
     </header>
+</section>
+<aside>
+    <form action="logearse.php" method="post"> <!--La accion al pulsar el boton, llamaría a un php logearse y el metodo post es más seguro para estas cosas-->
+        <div class="container">
+          <label for="usuario"><b>Usuario</b></label>
+          <input type="text" placeholder="Usuario" name="uname" required> 
+      
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Password" name="psw" required> <!--tipo password para que la oculte-->
+      
+          <button type="submit">Iniciar Sesión</button>
+          <label>
+            <input type="checkbox" checked="checked" name="Recordar"> Recuérdame
+          </label>
+          <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>       
+      </form>
+</aside>
+
 </body>
 </html>
