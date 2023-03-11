@@ -40,19 +40,21 @@ MENU PRINCIPAL
     a:active{
         font-weight: bold;
     }
-/*FORMULARIO
+/*
 *
+*
+*FORMULARIO Contacto
 *
 *
 */
 
 
 
-/*IMAGENES
+/*
 *
 *
 *
-*
+*IMAGENES
 *
 *
 */
@@ -76,9 +78,16 @@ MENU PRINCIPAL
   table {   
     margin: 0 auto; /* Para centrar usamos "auto" en la alineación horizontal */
 }
+/*
+*
+*Organizar un poco las cabeceras
+*
+*
+*/
 h1,h2,h3,h6{
     text-align: center;
     color: #00ff88;
+   
 }
 h1{
     font-size: 30px;
@@ -97,18 +106,8 @@ aside{
   width: 20%;
 }
 
-/*
-*
-*
-*
-*
-*
-*
-*
-**
-*
-*/
-form {
+
+aside form {
   border: 3px solid #00ff88;
 }
 /* Full-width inputs */
