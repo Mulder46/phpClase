@@ -54,10 +54,29 @@ MENU PRINCIPAL
   background-color: #a7a7a7;
   opacity: 80%;
   padding-top: 12px;
+  line-height: 2%;
   
 }
-
-
+.cajas{
+  width: 50%;
+}
+.larga{
+  width: 80%;
+}
+.numer{
+  width: 13%;
+}
+.cp{
+  width: 34%;
+}
+.envio{
+  width: 30%;
+  padding-left: 30%;
+}
+.footCont{
+  width: 100%;
+  float: right;
+}
 /*
 *
 *

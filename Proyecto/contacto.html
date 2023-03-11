@@ -54,82 +54,63 @@
           </header>
           <main>
             <form>
-              <div class="form-item box-item">
+              <div class="cajas">
+                <p>Nombre<small>*</small></p>
                 <input type="text" name="name" placeholder="Nombre" data-required>
-                <small class="errorReq"><i class="fa fa-asterisk" aria-hidden="true"></i> *</small>
+                
               </div>
-              <div class="form-item box-item">
+              <div class="cajas">
+                <p>Correo Electrónico<small>*</small></p>
                 <input type="email" name="email" placeholder="Email" data-email data-required>
-                <small class="errorReq"><i class="fa fa-asterisk" aria-hidden="true"></i> *</small>
-                <small class="errorEmail"><i class="fa fa-asterisk" aria-hidden="true"></i> email is not valid</small>
+                
               </div>
-              <div class="form-item box-item">
-                <div class="form-item-triple">
-                  <div class="radio-label"> 
+              <div class="cajas">
+                   
                     <label class="label">Género</label>
-                  </div>
-                  <div class="form-item"> 
+                                     
                     <input id="Hombre" type="radio" name="gender" value="Hombre" data-once>
-                    <label for="Male">Hombre</label>
-                  </div>
-                  <div class="form-item"> 
+                    <label for="hombre">Hombre</label>                                    
                     <input id="Mujer" type="radio" name="gender" value="Mujer" data-once>
-                    <label for="Female">Mujer</label>
-                  </div>
-                  <div class="form-item"> 
+                    <label for="mujer">Mujer</label>                             
                     <input id="Otro" type="radio" name="gender" value="Otro" data-once>
-                    <label for="Female">Otro</label>
-                  </div>
+                    <label for="otro">Otro</label>
+              </div>
+              <div class="larga">
+                <p>Dirección</p>
+                <input  type="text" name="direccion" placeholder="calle" >
+              </div>
+              <div class="numer">
+                  <input type="text" name="strNumber" placeholder="Nº"  data-number>
+              </div>
+              <div class="cp">
+                  <input type="text" name="zCode" placeholder="Codigo postal"  data-number>
+              </div>
+              <div class="cp">
+                <p>Telefono<small>*</small></p>
+                <input type="text" name="telefono" placeholder="Telefono" data-required data-number data-count="10">
                 </div>
-                <small class="errorOnce"><i class="fa fa-asterisk" aria-hidden="true"></i> choose at least one</small>
+                <label for="Tipo">Tipo de cliente</label>
+                <select name="tipo" id="tipo">
+                    <option value="premium">Premium</option>
+                  <option value="Normal">Normal</option>
+                  <option value="Jefe">Jefe</option>
+                  <option value="Pirata">Pirata</option>
+                </select>
+
+              <div class="cajas">
+                <textarea id="w3review" name="w3review" rows="4" cols="50">¿En que podemos ayudarle?</textarea>
               </div>
-              <div class="form-item box-item">
-                <div class="form-item-triple">
-                  <div class="radio-label"> 
-                    <label class="label">Type</label>
-                  </div>
-                  <div class="form-item"> 
-                    <input id="sponsored" type="radio" name="gender2" value="sponsored" data-once>
-                    <label for="sponsored">sponsored</label>
-                  </div>
-                  <div class="form-item"> 
-                    <input id="paid" type="radio" name="gender2" value="paid" data-once>
-                    <label for="paid">paid</label>
-                  </div>
-                </div>
-                <small class="errorOnce"><i class="fa fa-asterisk" aria-hidden="true"></i> choose at least one</small>
-              </div>
-              <div class="form-item box-item">
-                <input type="text" name="address" placeholder="Address" data-required>
-                <small class="errorReq"><i class="fa fa-asterisk" aria-hidden="true"></i> required field</small>
-              </div>
-              <div class="form-item-double box-item">
-                <div class="form-item ">
-                  <input type="text" name="strNumber" placeholder="Str Number" data-required data-number>
-                  <small class="errorReq"><i class="fa fa-asterisk" aria-hidden="true"></i> required field</small>
-                  <small class="errorNum"><i class="fa fa-asterisk" aria-hidden="true"></i> must be a number</small>
-                </div>
-                <div class="form-item">
-                  <input type="text" name="zCode" placeholder="Zip Code" data-required data-number>
-                  <small class="errorReq"><i class="fa fa-asterisk" aria-hidden="true"></i> required field</small>
-                  <small class="errorNum"><i class="fa fa-asterisk" aria-hidden="true"></i> must be a number</small>
-                </div>
-              </div>
-              <div class="form-item box-item">
-                <input type="text" name="phone" placeholder="Phone" data-required data-number data-count="10">
-                <small class="errorReq"><i class="fa fa-asterisk" aria-hidden="true"></i> required field</small>
-                <small class="errorNum"><i class="fa fa-asterisk" aria-hidden="true"></i> must be a number</small>
-                <small class="errorChar"><i class="fa fa-asterisk" aria-hidden="true"></i> must be 10 digits</small>
-              </div>
-              <div class="form-item">
-                <span id="submit" class="submit">Submit</span>
+              <div class="envio">
+                <button type="submit">Enviar</button>
               </div>
             </form>
           </main>
-          <footer>
+          <footer class="footCont">
             <p>Tienes Cuenta? <a href="#">Logeate</a></p>
+            <small>* Campo obligatorio</small>
+            <p> .</p>
           </footer>
-          <i class="wave"></i>
+          
         </section>
       </div>
       
