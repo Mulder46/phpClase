@@ -138,3 +138,10 @@ button {
 span.psw {
   float: right;
 }
+
+.biograf{
+  width: 60%;
+  color: #fff;
+  text-align: center;
+  background-color: #a7a7a7;
+}
