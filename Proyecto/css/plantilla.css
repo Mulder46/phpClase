@@ -9,7 +9,7 @@
 .menu{
     color:green;
     width: 100%;
-  /*position: fixed;*/
+  position: fixed;
 }
 .menu li{   
     display:inline-block;
@@ -54,25 +54,26 @@
 *
 */
 .crecer {
-    position: relative;
-   /* display: inline-block;*/
+    position: relative; /*para que se pòngan al lado y no se pise */
+    display: inline-block;
   }
   
   .pequenho {
     display: none;
     position: absolute;
-    background-color: #00ff88;
+    background-color: #000201;
     min-width: 160px;
 
   }
   
   .crecer:hover .pequenho {
     display: block;
+    z-index: 1;  /*esto es para que quede por encima de los demás*/
   }
   table {   
     margin: 0 auto; /* Para centrar usamos "auto" en la alineación horizontal */
 }
-h1,h2,h3{
+h1,h2,h3,h6{
     text-align: center;
     color: #00ff88;
 }
@@ -80,3 +81,4 @@ h1{
     font-size: 30px;
     text-decoration-line: underline;
 }
+
