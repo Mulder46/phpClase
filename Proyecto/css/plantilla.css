@@ -172,3 +172,11 @@ span.psw {
   text-align: center;
   background-color: #a7a7a7;
 }
+.definiciones{
+  width: 40%;
+  padding-left: 10%;
+  margin-left: 20%;
+  background-color: #00ff88;
+  opacity: 70%;
+  font-weight: bold;
+}
