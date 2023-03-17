@@ -1,0 +1,183 @@
+
+
+ body {
+       /* background-color: red;*/
+        background-image: url(https://static.vecteezy.com/system/resources/previews/006/713/082/non_2x/abstract-health-medical-science-healthcare-icon-digital-technology-science-concept-modern-innovation-treatment-medicine-on-hi-tech-future-blue-background-for-wallpaper-template-web-design-vector.jpg);
+       /* background-image: url(images\fondo.jpg);*/
+    }
+/*
+*
+*
+MENU PRINCIPAL
+*
+*
+*/
+.menu{
+    color:green;
+    width: 100%; /* que ocupe toda la cabecera */
+  position: fixed; /*no se mueva aunque baje la pantalla */
+}
+.menu li{   
+    display:inline-block; /*se pongan al lado sin pisarse */ 
+    padding:5px 10px;
+    background-color:#000;
+    border:1px solid #a7a7a7;
+    text-align:center;
+    width: 23%; /* que cada item tenga un tamaño igual*/
+    }
+    .menu li:hover{  /* Cuando el ratón está encima*/ 
+        background-color:#fff;
+        color:#000;
+        font-weight: bold;
+        }
+    .menu li:active{ /*Cuando se está pulsando */
+         background-color:#00ff88;
+         color:#000;
+          }
+    a,a:visited{ /* no quiero que se diferencia cuando un enlace se a visitado*/
+         color:green;
+    }
+    a:active{
+        font-weight: bold;
+    }
+/*
+*
+*
+*FORMULARIO Contacto
+*
+*
+*/
+.Contacto{
+  width: 40%;
+  color: #000000;
+  margin-left: 30%;
+  padding-left: 8%;
+  background-color: #a7a7a7;
+  opacity: 80%;
+  padding-top: 12px;
+  
+}
+.cajas{
+  width: 50%;
+
+}
+.larga{
+  width: 80%;
+}
+.numer{
+  width: 13%;
+}
+.cp{
+  width: 34%;
+}
+.envio{
+  width: 30%;
+  padding-left: 30%;
+}
+.footCont{
+  width: 100%;
+  float: right;
+}
+/*
+*
+*
+*
+*IMAGENES
+*
+*
+*/
+.crecer {
+    position: relative; /*para que se pòngan al lado y no se pise */
+    display: inline-block;
+  }
+  
+  .pequenho {
+    display: none;
+    position: absolute;
+    background-color: #000201;
+    min-width: 160px;
+
+  }
+  
+  .crecer:hover .pequenho {
+    display: block;
+    z-index: 1;  /*esto es para que quede por encima de los demás*/
+  }
+  table {   
+    margin: 0 auto; /* Para centrar usamos "auto" en la alineación horizontal */
+}
+/*
+*
+*Organizar un poco las cabeceras
+*
+*
+*/
+h1,h2,h3,h6{
+    text-align: center;
+    color: #00ff88;
+   
+}
+h1{
+    font-size: 30px;
+    text-decoration-line: underline;
+}
+/* 
+*
+* Menu lateral
+*
+*
+*/
+aside{   
+  float: right; /* Alineo a la derecha*/
+  color: rgb(22, 105, 58);
+  background-color: #000;
+  width: 20%;
+}
+
+
+aside form {
+  border: 3px solid #00ff88;
+}
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* aceptar */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  width: 100%; /* que el uuniciar sesión ocupe todo el formulario*/
+}
+
+/* dar un poco de padding */
+.container {
+  padding: 16px;
+}
+
+/*olvido la contraseña alineado a la derecha */
+span.psw {
+  float: right;
+}
+
+.biograf{
+  width: 60%;
+  color: #fff;
+  text-align: center;
+  background-color: #a7a7a7;
+}
+.definiciones{
+  width: 40%;
+  padding-left: 10%;
+  margin-left: 20%;
+  background-color: #00ff88;
+  opacity: 70%;
+  font-weight: bold;
+}
