@@ -8,7 +8,7 @@
 </head>
 <body>
     <!--Biografía
-    
+     es asi 
     Nueva página de nombre biografia.html. Su contenido estará conformado por texto y como mínimo una imagen.-->
     <?php include ('cabecera.html'); ?>
     <header>
