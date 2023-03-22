@@ -49,13 +49,13 @@ class Rombo {
     }
 
     public function pintarfilas($dimension1){
-        $this->espacios($dimension1);
+        self::espacios($dimension1);
         self::cruces($dimension1);
         return $dimension1;
 
     }
 }
-$rombo=new Rombo(4,8);
+$rombo=new Rombo(4,10);
 echo "<center>";
 $rombo->dibujar();
 echo "</center>";
