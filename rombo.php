@@ -27,7 +27,7 @@ class Rombo {
     public function espacios($dim1){
         $espacios=($this->dimension2-$dim1)/2;
         for($i=0;$i<$espacios;$i++){
-            echo "-";
+            echo " ";
         }
     }
     
@@ -45,7 +45,8 @@ class Rombo {
     }
 }
 $rombo=new Rombo(4,10);
+echo "<center>";
 $rombo->dibujar();
-
+echo "</center>";
 
 ?>
