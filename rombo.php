@@ -5,8 +5,19 @@ class Rombo {
     protected $dimension2;
     //Constructor
     public function __construct($dimension1,$dimension2){
-        $this->dimension1 = $dimension1;
-        $this->dimension2 = $dimension2;
+        if(self::minimo($dimension1))
+            $this->dimension1 = $dimension1;
+        if(self::mayor($dimension1,$dimension2))
+            $this->dimension2 = $dimension2;
+    }
+    public function minimo($dim1){
+        return $dim1>1;
+    }
+    public function mayor($dim1,$dim2){
+        return $dim1>$dim2;
+    }
+    public function proporcion($dim1,$dim2){
+
     }
     public function dibujar(){
         $auxiliar= $this->dimension1;
@@ -38,13 +49,13 @@ class Rombo {
     }
 
     public function pintarfilas($dimension1){
-        self::espacios($dimension1);
+        $this->espacios($dimension1);
         self::cruces($dimension1);
         return $dimension1;
 
     }
 }
-$rombo=new Rombo(4,10);
+$rombo=new Rombo(4,8);
 echo "<center>";
 $rombo->dibujar();
 echo "</center>";
