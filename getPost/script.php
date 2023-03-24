@@ -1,4 +1,4 @@
 <?php
-$_GET['password']; 
-$POST['user'];
+    $_GET['password']; 
+    $POST['user'];
 ?>
