@@ -185,14 +185,57 @@ function mostrarEstudiantes($lista){
 echo mostrarEstudiantes($estudiantes);
 echo "<br>";
 //20 Crea una función que sólo muestre la información de los estudiantes (del ejercicio 18) que estén matriculados en el curso de Desarrollo Web.
-function solo18(){
-    
+function soloWeb($lista){
+    for($i=0;$i<count($lista);$i++){
+        if($lista[$i]["curso"]=="Desarrollo Web"){
+        echo "Estudiante: ".$lista[$i]["Nombre"]."<br>";
+        
+        echo "Año: ".$lista[$i]["anho"]."<br>";
+        echo "<br>";
+        }
+
+    }
 }
+
+echo "Desarrollo web:";
+echo "<br>";
+soloWeb($estudiantes);
 echo "<br>";
 //21 Crea una función que sólo muestre la información de los estudiantes (del ejercicio 18) que estén matriculados en el 2023.
 
+function solo2023($lista){
+    for($i=0;$i<count($lista);$i++){
+        if($lista[$i]["anho"]==2023){
+        echo "Estudiante: ".$lista[$i]["Nombre"]."<br>";
+        
+        echo "Año: ".$lista[$i]["curso"]."<br>";
+        echo "<br>";
+        }
+
+    }
+}
+
+echo "2003:";
 echo "<br>";
-//22 Carmen hace todas las semanas la misma compra, y por ello y para facilitarle la vida le ha pedido a su hijo que le haga un pequeño programa que le indique que productos de la lista debe comprar, para ello. PISTA: crea una array asociativo que se llame lista de la compra, cuya clave (key) sea el nombre del producto y valor (value) true o false dependiendo si es necesario comprarlo o no. Por ejemplo: "huevos" => true. Esto quiere decir que sería necesario comprar huevos.
+solo2023($estudiantes);
+echo "<br>";
+//22 Carmen hace todas las semanas la misma compra, y por ello y para facilitarle la vida le ha pedido a su hijo que le haga un pequeño programa que 
+//le indique que productos de la lista debe comprar, para ello. PISTA: crea una array asociativo que se llame lista de la compra, cuya clave (key) sea 
+//el nombre del producto y valor (value) true o false dependiendo si es necesario comprarlo o no. Por ejemplo: "huevos" => true. Esto quiere decir que sería necesario comprar huevos.
+$listaCompra=["huevos"=>true,"Pollo"=>false,"arroz"=>false,"gazpacho"=>true,"zurrapa de lomo"=>true];
+function listaComprar($lista){
+    $valores=array_values($lista);
+    $claves=array_keys($lista);
+    for($i=0;$i<count($lista);$i++){ //cambiar por un FOR???
+        if($valores[$i]){
+            
+            echo "Compra: ".$claves[$i]."<br>";
+        }
+    }
+}
+listaComprar($listaCompra);
+//var_dump( array_values($listaCompra));
+//var_dump (sha1("codigo"));
 
 echo "<br>";
 //23 Crea una función que devuelva los productos de la lista de la compra que hace falta comprar del ejercicio anterior.
