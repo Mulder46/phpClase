@@ -226,7 +226,7 @@ $listaCompra=["huevos"=>true,"Pollo"=>false,"arroz"=>false,"gazpacho"=>true,"zur
 function listaComprar($lista){
     $valores=array_values($lista);
     $claves=array_keys($lista);
-    for($i=0;$i<count($lista);$i++){ //cambiar por un FOR???
+    for($i=0;$i<count($lista);$i++){ 
         if($valores[$i]){
             
             echo "Compra: ".$claves[$i]."<br>";
@@ -242,7 +242,18 @@ echo "<br>";
 
 echo "<br>";
 //24 Crea una función que devuelva los productos de la lista de la compra que NO hace falta comprar del ejercicio anterior.
-
+$listaCompra=["huevos"=>true,"Pollo"=>false,"arroz"=>false,"gazpacho"=>true,"zurrapa de lomo"=>true];
+function listaNoComprar($lista){
+    $valores=array_values($lista);
+    $claves=array_keys($lista);
+    for($i=0;$i<count($lista);$i++){ 
+        if(!$valores[$i]){
+            
+            echo "No comprar: ".$claves[$i]."<br>";
+        }
+    }
+}
+listaNoComprar($listaCompra);
 echo "<br>";
 /*25 Añade nuevos los siguientes productos a la lista de la compra y muestrála lista por pantalla:
 
