@@ -19,8 +19,8 @@ for($i=0;$i<count($todoPokemon);$i++){ //guardo en pokemon el nombre altura peso
     $habilidades=$url["abilities"]; //de ello cojo el array de habilidades habilidad
     $ataques=$url["moves"]; //todo el array de ataques
 
-    var_dump($ataques);
-    echo "-- <br>";
+    // var_dump($ataques);
+    //echo "-- <br>";
     $pokemon[$i][0]=$todoPokemon[$i]["name"]; //en la posición 0 guardo el nombre del pokemon
     //guardar habilidades
         for($j=1;$j<=count($habilidades);$j++){ //a cada pokemon le meto sus habilidades en otra dimensión del array   J=1 para que no machaque el 0 que es el nombre
@@ -30,7 +30,24 @@ for($i=0;$i<count($todoPokemon);$i++){ //guardo en pokemon el nombre altura peso
         for($j=0;$j<count($ataques);$j++){ //   
             $atack[$i][$j][0]=$ataques[$j]["move"]["name"];  //el nomre del ataque
             $atack[$i][$j][1]=$ataques[$j]["move"]["url"];  //la url para ver el daño que hace 
-            //var_dump ($atack);
+           // var_dump ($atack);
+            /*$atack
+            array(1) { 
+                    [0]=> array(1) { 
+                        [0]=> array(2) {
+                             [0]=> string(10) "razor-wind" 
+                             [1]=> string(34) "https://pokeapi.co/api/v2/move/13/" 
+                        } 
+                    } 
+                } --
+             */
+            $url=$atack[$i][$j][1];
+            echo $url;
+            $pokemon_json = file_get_contents($url);
+            $decoded_json = json_decode($pokemon_json, true); //true array asociado, false clase
+            $atack[$i][$j][2] = $decoded_json['power'];  //en el hueco 2 meto la potencia de ataque
+            //var_dump($ataque);
+           //var_dump($atack[$i][$j][0]);
             echo "-- <br>";
         }
 }
@@ -50,7 +67,10 @@ for($i=0;$i<count($todoPokemon);$i++){
     mysqli_query($connection, "INSERT INTO pokemon (nombre,altura,peso,vida) values ('$poke',$altura,$peso,$vidaPok);");
     for($j=1;$j<=count($habilidades);$j++){ //a cada pokemon le meto sus habilidades en otra dimensión del array   J=1 para que no machaque el 0 que es el nombre
         $habil=$pokemon[$i][$j];
+        $golpe=$atack[$i][$j][0]; //el nombre
+        $ataque=$atack[$i][$j][2]; //su potencia
         mysqli_query($connection, "INSERT INTO habilidades (nombre,fk_pokemon) values ('$habil',$i+1);");
+        mysqli_query($connection, "INSERT INTO ataques (ataque,fk_pokemon,fuerza) values ('$golpe',$i+1,'$ataque');");
     }
 }
 
