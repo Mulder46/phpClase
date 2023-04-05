@@ -18,6 +18,7 @@ for($i=0;$i<count($todoPokemon);$i++){ //guardo en pokemon el nombre altura peso
             $pokemon[$i][$j]=$habilidades[$j-1]["ability"]["name"];  //el j-1 para no perder primera habilidad
             $dimensiones[$i][0]=$peso=$url["weight"];
             $dimensiones[$i][1]=$altura=$url["height"];
+
         }
 }
 // conexión
