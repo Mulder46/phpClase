@@ -42,9 +42,10 @@ function eligeAtaque($pokeUsuario){ //pedir el ataque, aquí debe parar el progr
     for($i=0;$i<count($pokeUsuario);$i++){
         echo $pokeUsuario[$i]["ataque"]." ".$pokeUsuario[$i]["fuerza"]."<br>";
     }
-    $ataque=rand(0,count($pokeUsuario)); 
+    $max=count($pokeUsuario)-1;
+    $ataque=rand(0,$max); 
 
-    return $pokeUsuario[$ataque]; //devuelvo un array con el nomre de ataque y su daño
+    return $pokeUsuario[$ataque]; //devuelvo un array con el nombre de ataque y su daño
 }
 
 function ataqueIA($pokeIA){

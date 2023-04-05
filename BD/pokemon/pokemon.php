@@ -2,7 +2,7 @@
 $tiempo_inicial = microtime(true);
 
 
-$pokemon_json = file_get_contents('https://pokeapi.co/api/v2/pokemon?limit=2');
+$pokemon_json = file_get_contents('https://pokeapi.co/api/v2/pokemon?limit=15');
 $decoded_json = json_decode($pokemon_json, true); //true array asociado, false clase
 $todoPokemon = $decoded_json['results'];
 
@@ -41,13 +41,11 @@ for($i=0;$i<count($todoPokemon);$i++){ //guardo en pokemon el nombre altura peso
         for($j=0;$j<count($ataques);$j++){  
             //atack 0 = Nombre del ataque 1 potencia 2 los pp 3 probabilidad 4 tipo 5 nivel de aprender
             $url=$ataques[$j]["move"]["url"];  //la url para ver el daño que hace 
-         //var_dump($ataques);
             $atack[$i][$j][5] = $ataques[$j]["version_group_details"][0]['level_learned_at'];  //a que nivel lo aprende?
 
             $pokemon_json = file_get_contents($url);
             $decoded_json = json_decode($pokemon_json, true); //true array asociado, false clase
-
-        //var_dump($decoded_json['names'][5]);   
+  
             $atack[$i][$j][3] = $decoded_json['accuracy']; //probabiliad de golpear
             $atack[$i][$j][2] = $decoded_json['pp']; //los pp son la cantidad de veces que puede hacer ese ataque
             $atack[$i][$j][1] = $decoded_json['power'];  //en el hueco 2 meto la potencia de ataque i=pokemon j=ataque? 0=nombre 1=daño
@@ -73,6 +71,7 @@ include "conexion.php";
 
 
 //inserción en la BD 
+ 
 for($i=0;$i<count($todoPokemon);$i++){
     $poke=$pokemon[$i][0]; //problemas al ponerlo directamente en el insert....pues pa'aca
     $altura=$dimensiones[$i][0];
@@ -90,21 +89,35 @@ for($i=0;$i<count($todoPokemon);$i++){
     //$tipo2=$tipo2Array[$i];
     $tipo2="prueba";
 
-   // mysqli_query($connection, "INSERT INTO pokemon (nombre,altura,peso,vida,atras,alante,ataque,defensa,aEspecial,dEspecial,velocidad,tipo1,tipo2) 
-   //                             VALUES ('$poke',$altura,$peso,$vidaPok,'$atras','$alante',$ataque,$defensa,$aEspecial,$dEspecial,$velocidad,'$tipo1','$tipo2');");
- 
- for($j=1;$j<=count($atack);$j++){ //a cada pokemon le meto sus habilidades en otra dimensión del array   J=1 para que no machaque el 0 que es el nombre     
-        $habil=$pokemon[$i][$j];
-        $golpe=$atack[$i][$j][0]; //el nombre
-        $ataque=$atack[$i][$j][1]; //su potencia
+    mysqli_query($connection, "INSERT INTO pokemon (nombre,altura,peso,vida,atras,alante,ataque,defensa,aEspecial,dEspecial,velocidad,tipo1,tipo2) 
+                                VALUES ('$poke',$altura,$peso,$vidaPok,'$atras','$alante',$ataque,$defensa,$aEspecial,$dEspecial,$velocidad,'$tipo1','$tipo2');");
+
+ for($j=0;$j<count($atack);$j++){ //a cada pokemon le meto sus habilidades en otra dimensión del array       
+        
+        $golpe=$atack[$i][$j][0]; //el nombre problemas en 5¿?
+        if($ataque=$atack[$i][$j][1]){//por si el ataque es 0
+            $ataque=$atack[$i][$j][1];
+        }else{
+                $ataque=0;
+            } 
+        //echo "Es ataque ".$ataque;
         $pp=$atack[$i][$j][2]; //los pp de ese ataque
-        $probable=$atack[$i][$j][3]; //lA PROBABILIDAD de ese ataque
+        if($probable=$atack[$i][$j][3]){
+            $probable=$atack[$i][$j][3]; //lA PROBABILIDAD de ese ataque!!!!!!
+        }else{
+                $probable=0;
+            }
+        
+        //echo "Es probable ".$probable;
         $tipoAtaque=$atack[$i][$j][4]; //pues el tipo
-        echo $tipoAtaque;
+        $nivelNecesario=$atack[$i][$j][5];
+        $fk=$i+1; //pues na, daba problemas poner +1 en el insert
+        echo "<br>"."INSERT INTO ataques (ataque,fk_pokemon,fuerza,pp,probabilidad,tipo) 
+        values ('$golpe',$fk,'$ataque',$pp,$probable,'$tipoAtaque');";
 
     //    mysqli_query($connection, "INSERT INTO habilidades (nombre,fk_pokemon) values ('$habil',$i+1);");
-        mysqli_query($connection, "INSERT INTO ataques (ataque,fk_pokemon,fuerza,pp,probabilidad,tipo) 
-                    values ('$golpe',$i+1,'$ataque',$pp,$probable,'$tipoAtaque');");
+        mysqli_query($connection, "INSERT INTO ataques (ataque,fk_pokemon,fuerza,pp,probabilidad,tipo,nivelNecesario) 
+                    values ('$golpe',$fk,'$ataque',$pp,$probable,'$tipoAtaque',$nivelNecesario);");
     }
 }
 
