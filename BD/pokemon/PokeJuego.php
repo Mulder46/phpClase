@@ -3,15 +3,15 @@ include "conexion.php";
 
 /*
 Cosas a tener en cuenta para futuro
-- ataque vs denfensa
+-OK ataque vs denfensa
 -nivel del pokemon para darle un ataque u otro y aumentar el ataque
 -tipo fuerte contra otro
+-probabilidad de daño
+-tener en cuenta los pp
+-efectos veneno (añadir a BD)
+-probabilidad de crítico (añadir a BD)
+-tipos de ataque
 
-ataque * (potencia(tipo *1,5) /100)  -defensaRival/10 
-critico
-nivel*2
-
-1. La Fórmula de Daño. Daño (PS) = {([{(2 * Nv. / 5 + 2) * Ataque * Poder / Defensa} / 50] * 1°Mod. + 2) * STAB * Efec.
 */
 //FUNCIONES
 
@@ -40,7 +40,7 @@ function asignaAtaque($connection,$pokemon){ //sacamos todos los ataques que tie
 function eligeAtaque($pokeUsuario){ //pedir el ataque, aquí debe parar el programa hasta que el usuario elija
     echo "Elige ataque: <br>";
     for($i=0;$i<count($pokeUsuario);$i++){
-        echo $pokeUsuario[$i]["ataque"].$pokeUsuario[$i]["fuerza"]."<br>";
+        echo $pokeUsuario[$i]["ataque"]." ".$pokeUsuario[$i]["fuerza"]."<br>";
     }
     $ataque=rand(0,count($pokeUsuario)); 
 
@@ -64,7 +64,7 @@ function calculaFuerza($pokemon1,$pokemon2,$ataque){
     $poder=$ataque;
     $varianza=rand(85,100);
     $defensa=$pokemon2[0]["defensa"];
-    return 0.01*$Bonificacion*$efectividad*$varianza*((((0.2*$nivelAtaque+1)*$ataque*$poder)/(25*$defensa))+2);
+    return round(0.01*$Bonificacion*$efectividad*$varianza*((((0.2*$nivelAtaque+1)*$ataque*$poder)/(25*$defensa))+2));
    
      
 }
