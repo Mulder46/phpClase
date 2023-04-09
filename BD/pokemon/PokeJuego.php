@@ -11,7 +11,9 @@ Cosas a tener en cuenta para futuro
 -efectos veneno (añadir a BD)
 -probabilidad de crítico (añadir a BD)
 -tipos de ataque
-
+- usuarios con contraseña
+-a que pokemon has ganado
+-cazar pokemons
 */
 //FUNCIONES
 
