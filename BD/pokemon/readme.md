@@ -1,12 +1,12 @@
 
 ## Versión 0.40
-empieza la creación de usuarios
-Elección de pokemon inicial
-Creada mochila de pokemons
-B.D. de batallas ganadas
+1. empieza la creación de usuarios
+2. Elección de pokemon inicial
+3. Creada mochila de pokemons
+4. B.D. de batallas ganadas
 #### Bugs conocidos
-una vez iniciada sesión, el salto al juego debería ser invisible y no poder modificar el usuario ni el pokemon id
-elegir pkmn enr¡tre la  mochila
-elegir ataque en cada momento
+1. una vez iniciada sesión, el salto al juego debería ser invisible y no poder modificar el usuario ni el pokemon id
+2. elegir pkmn enr¡tre la  mochila
+3. elegir ataque en cada momento
 
 ## Versión 0.35
