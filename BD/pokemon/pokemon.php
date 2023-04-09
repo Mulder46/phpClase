@@ -96,7 +96,7 @@ for($i=0;$i<count($todoPokemon);$i++){
         
         $golpe=$atack[$i][$j][0]; //el nombre problemas en 5¿?
         if($ataque=$atack[$i][$j][1]){//por si el ataque es 0
-            $ataque=$atack[$i][$j][1];
+            $ataque=$atack[$i][$j][1]; //en el 5?
         }else{
                 $ataque=0;
             } 
