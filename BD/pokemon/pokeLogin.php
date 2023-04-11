@@ -15,20 +15,34 @@ function contrasenha(&$id,$connection,$usuario,$contrasenha){
     $id=$pass[0]["id"]; //le pasamos la id para facilitar a la parte de pokeJuego
     return password_verify($contrasenha, $hash);
 }
+$ip = empty($_SERVER["REMOTE_ADDR"]) ? "Desconocida" : $_SERVER["REMOTE_ADDR"];
+echo $ip."<br>";
 include "conexion.php";
-
+$fecha=date("Y/m/d");
 if(existencia($connection,$usuario)){ //si existe miramos  su contraseña
     $id=0; //inicializamos la id
     if(contrasenha($id,$connection,$usuario,$contrasenha)){
+        //crear un insert en el log con el éxito
+        
+        mysqli_query($connection, "INSERT INTO log(nombre,fecha,conseguido,ip) 
+                    VALUES ('$usuario','$fecha',1,'$ip');");
         echo "login bien";
         echo "<form action='PokeJuego.php' method='post'>
-            <input name='usuario' value=".$usuario.">
-            <input name='id' value=".$id.">
+            <input name='usuario'type='hidden' value=".$usuario.">
+            <input name='id' value=".$id." type='hidden'>
             <input type='submit' value='Jugar' />  
             </form>";
     }else{
-        echo "Usuario o contraseña incorrecta!!!";
+        //crear un insert en el log con el fracaso
+        mysqli_query($connection, "INSERT INTO log(nombre,fecha,conseguido,ip) 
+                    VALUES ('$usuario','$fecha',0,'$ip');");
+        echo "Contraseña incorrecta!!!";
     }
+}else{
+    //crear un insert en el log con el fracaso
+    mysqli_query($connection, "INSERT INTO log(nombre,fecha,conseguido,ip) 
+    VALUES ('$usuario','$fecha',0,'$ip');");
+    echo "Usuario incorrecta!!!";
 }
 
 

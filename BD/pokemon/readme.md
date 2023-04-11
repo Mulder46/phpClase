@@ -1,3 +1,11 @@
+## Versión 0.46
+1. Corregido error de elección inicial
+2. Función de log de inicios e intentos de inicio en funcionamiento.
+3. Conteo de partidas ganadas en el perfil de usuario
+
+#### Bugs conocidos
+1. Los puntos de experiencia no están bien formulados
+2. El daño por ataque no es del todo preciso
 
 ## Versión 0.40
 1. empieza la creación de usuarios

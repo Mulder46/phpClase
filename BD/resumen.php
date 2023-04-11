@@ -21,4 +21,6 @@ y si campo id que es uno de los que pusimos en el select
             $existe=mysqli_query($connection, "SELECT id,usuario FROM usuarios WHERE usuario='$usuario';");
             return  $existe->num_rows > 0;  
         }
+// GUARDAR IP VISITANTE
+        $ip = empty($_SERVER["REMOTE_ADDR"]) ? "Desconocida" : $_SERVER["REMOTE_ADDR"];
         ?>
