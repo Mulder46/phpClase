@@ -1,0 +1,18 @@
+Modelos: Los modelos en Laravel son clases que representan las tablas en la base de datos. Los modelos se utilizan 
+para realizar consultas y operaciones en la base de datos, como insertar, actualizar y eliminar registros. Los modelos 
+también se utilizan para definir relaciones entre tablas y para validar los datos antes de guardarlos en la base de datos.
+
+Vistas: Las vistas en Laravel son archivos que se utilizan para definir la interfaz de usuario de la aplicación. Las vistas 
+se utilizan para mostrar datos y para recibir entradas de los usuarios. Las vistas pueden incluir HTML, CSS, JavaScript y cualquier 
+otra tecnología de front-end.
+
+Controladores: Los controladores en Laravel son clases que se utilizan para manejar las solicitudes de los usuarios. Los controladores 
+se encargan de recibir las solicitudes de los usuarios, procesar los datos y enviar una respuesta al usuario. Los controladores también 
+se utilizan para manejar la lógica de la aplicación, como la autenticación, la autorización y la validación de datos.
+
+Migraciones: Las migraciones en Laravel se utilizan para crear y modificar las tablas en la base de datos. Las migraciones son
+ archivos que contienen código PHP para definir la estructura de las tablas y para realizar cambios en ellas. Las migraciones 
+ se utilizan para mantener la integridad de la base de datos y para facilitar la colaboración entre los desarrolladores.
+
+IMPORTANTE!!!! Para poder ejecutar en el postman peticiones de tipo post, Comentar en nuestro proyecto, las líneas 37 y 58 
+del archivo "kernel.php" (está dentro de http justo debajo de "controllers" y "middlewares")

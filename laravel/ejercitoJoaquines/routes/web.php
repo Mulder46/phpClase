@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\GetController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,8 +16,3 @@ use App\Http\Controllers\GetController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('saludo', function () {
-    return 'hola mundo';
-});
-Route::get('get', [GetController::class, 'index']);

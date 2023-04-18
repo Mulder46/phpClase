@@ -1,0 +1,14 @@
+APP : aquí vivirá todo nuestro código principal.
+Bootstrap: utilizada por laravel para mejorar el rendimiento.
+config: cada paquete que se instale, se genera un archivo que se puede editar y modificar.
+Database : carpeta principal de las bases de datos.
+a. Migrations : archivos con la estructura principal para desarrollar tablas.
+b. Factories: nos permite desarrollar datos falsos para probar aplicación.
+c. Seeders: encargada de ejecutar los factories que desarrollemos.
+lang: idioma.
+public: punto de acceso a web.
+resources: archivos originales css,javascript y vistas.
+routes: configuramos rutas del trabaja principalmente en web.php
+storage: elementos generados por laravel. cache o si usuario guarda muchos archivos se pueden guardar ahí.
+ test: pruebas.
+ vendor: No se toca esta carpeta. Ahí se ve todo lo que se instala con composer.
